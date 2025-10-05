@@ -1,6 +1,6 @@
-# crop-recommendation-system
-🌱 A Machine Learning-based Crop Recommendation System that suggests the most suitable crops based on soil and climate parameters. Built with Python, Flask, and Scikit-learn.
 # 🌱 Crop Recommendation System
+
+🌱 A Machine Learning-based Crop Recommendation System that suggests the most suitable crops based on soil and climate parameters. Built with Python, Flask, and Scikit-learn.
 
 [![Python](https://img.shields.io/badge/Python-3.8%2B-blue)](https://www.python.org/)
 [![Flask](https://img.shields.io/badge/Flask-2.0.1-green)](https://flask.palletsprojects.com/)
