@@ -6,7 +6,7 @@
 [![Flask](https://img.shields.io/badge/Flask-2.0.1-green)](https://flask.palletsprojects.com/)
 [![Scikit-learn](https://img.shields.io/badge/Scikit--learn-1.0.2-orange)](https://scikit-learn.org/stable/)
 
-A Machine Learning-based web application that recommends the most suitable crops to grow based on various soil and climate parameters.
+
 
 ## 🌟 Features
 
