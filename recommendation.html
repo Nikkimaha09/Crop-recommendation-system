@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop Recommendation Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Crop Recommendation Result</h1>
+        
+        <div class="result-container">
+            <div class="crop-header">
+                <div class="crop-image-container">
+                    {% set image_path = 'static/' + result|lower + '.jpg' %}
+                    <img src="{{ url_for('static', filename=result|lower + '.jpg') }}" 
+                         alt="{{ result }}" 
+                         class="crop-image"
+                         onerror="this.onerror=null; this.src='{{ url_for('static', filename='placeholder.jpg') }}'"
+                    >
+                </div>
+                <div class="crop-title">
+                    <h2>Recommended Crop: <span class="crop-name">{{ result }}</span></h2>
+                </div>
+            </div>
+            
+            {% if crop_detail %}
+            <div class="crop-details">
+                <h3>Details about {{ result }}:</h3>
+                {% if crop_detail.description %}
+                    <p>{{ crop_detail.description }}</p>
+                {% endif %}
+                
+                {% if crop_detail.ideal_conditions %}
+                <div class="detail-section">
+                    <h4>🌱 Ideal Growing Conditions:</h4>
+                    <ul class="detail-list">
+                        {% if crop_detail.ideal_conditions.temperature %}
+                            <li>🌡️ Temperature: {{ crop_detail.ideal_conditions.temperature }}</li>
+                        {% endif %}
+                        {% if crop_detail.ideal_conditions.rainfall %}
+                            <li>💧 Rainfall: {{ crop_detail.ideal_conditions.rainfall }}</li>
+                        {% endif %}
+                        {% if crop_detail.ideal_conditions.soil %}
+                            <li>🌱 Soil Type: {{ crop_detail.ideal_conditions.soil }}</li>
+                        {% endif %}
+                    </ul>
+                </div>
+                {% endif %}
+                
+                {% if crop_detail.growing_tips %}
+                <div class="detail-section">
+                    <h4>📝 Growing Tips:</h4>
+                    <ul class="detail-list">
+                        {% for tip in crop_detail.growing_tips %}
+                            <li>✅ {{ tip }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% endif %}
+            </div>
+            {% endif %}
+            
+            <div class="input-values">
+                <h3>📊 Your Input Values:</h3>
+                <div class="input-grid">
+                    <div class="input-group">
+                        <span class="input-label">Nitrogen (N):</span>
+                        <span class="input-value">{{ input_values.Nitrogen }} ppm</span>
+                    </div>
+                    <div class="input-group">
+                        <span class="input-label">Phosphorus (P):</span>
+                        <span class="input-value">{{ input_values.Phosphorus }} ppm</span>
+                    </div>
+                    <div class="input-group">
+                        <span class="input-label">Potassium (K):</span>
+                        <span class="input-value">{{ input_values.Potassium }} ppm</span>
+                    </div>
+                    <div class="input-group">
+                        <span class="input-label">Temperature:</span>
+                        <span class="input-value">{{ input_values.Temperature }}°C</span>
+                    </div>
+                    <div class="input-group">
+                        <span class="input-label">Humidity:</span>
+                        <span class="input-value">{{ input_values.Humidity }}%</span>
+                    </div>
+                    <div class="input-group">
+                        <span class="input-label">pH Level:</span>
+                        <span class="input-value">{{ input_values.pH }}</span>
+                    </div>
+                    <div class="input-group">
+                        <span class="input-label">Rainfall:</span>
+                        <span class="input-value">{{ input_values.Rainfall }} mm</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="action-buttons">
+                <a href="/" class="btn btn-primary">← Try Another Prediction</a>
+                <button onclick="window.print()" class="btn btn-secondary">🖨️ Print Results</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

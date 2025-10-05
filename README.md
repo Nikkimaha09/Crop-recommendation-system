@@ -1,31 +1,64 @@
-# 🌱 Crop Recommendation System
+# Crop Recommendation System
 
-🌱 A Machine Learning-based Crop Recommendation System that suggests the most suitable crops based on soil and climate parameters. Built with Python, Flask, and Scikit-learn.
+This project is a web-based crop recommendation system built using Flask. It allows users to input various parameters related to soil and climate conditions and provides recommendations for suitable crops based on the input data.
 
-[![Python](https://img.shields.io/badge/Python-3.8%2B-blue)](https://www.python.org/)
-[![Flask](https://img.shields.io/badge/Flask-2.0.1-green)](https://flask.palletsprojects.com/)
-[![Scikit-learn](https://img.shields.io/badge/Scikit--learn-1.0.2-orange)](https://scikit-learn.org/stable/)
+## Project Structure
 
+```
+crop-recommendation-system
+├── app
+│   ├── __init__.py
+│   ├── routes.py
+│   ├── forms.py
+│   ├── templates
+│   │   ├── index.html
+│   │   └── result.html
+│   └── static
+│       └── style.css
+├── requirements.txt
+├── run.py
+└── README.md
+```
 
+## Setup Instructions
 
-## 🌟 Features
+1. **Clone the repository:**
+   ```
+   git clone <repository-url>
+   cd crop-recommendation-system
+   ```
 
-- **Smart Crop Recommendations**: Get personalized crop suggestions based on soil and weather conditions
-- **Detailed Crop Information**: View comprehensive details about recommended crops
-- **User-friendly Interface**: Simple and intuitive web interface
-- **Responsive Design**: Works on both desktop and mobile devices
+2. **Create a virtual environment:**
+   ```
+   python -m venv venv
+   source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+   ```
 
-## 🛠️ Tech Stack
+3. **Install the required dependencies:**
+   ```
+   pip install -r requirements.txt
+   ```
 
-- **Frontend**: HTML5, CSS3, JavaScript
-- **Backend**: Python, Flask
-- **Machine Learning**: Scikit-learn, NumPy, Pandas
-- **Data Processing**: Pandas, NumPy
+## Usage
 
-## 🚀 Getting Started
+1. **Run the application:**
+   ```
+   python run.py
+   ```
 
-### Prerequisites
+2. **Access the application:**
+   Open your web browser and go to `http://127.0.0.1:5000/`.
 
-- Python 3.8 or higher
-- pip (Python package manager)
+3. **Input Parameters:**
+   Fill in the form with the required parameters for crop prediction.
 
+4. **View Results:**
+   After submitting the form, the recommended crop and its details will be displayed on the results page.
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a pull request or open an issue for any suggestions or improvements.
+
+## License
+
+This project is licensed under the MIT License. See the LICENSE file for more details.

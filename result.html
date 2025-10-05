@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Crop Recommendation Result</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Recommended Crop</h1>
+        <p>Based on your input parameters, we recommend the following crop:</p>
+        <h2>{{ recommended_crop }}</h2>
+        <p>Details:</p>
+        <ul>
+            <li>Soil Type: {{ soil_type }}</li>
+            <li>Temperature: {{ temperature }} °C</li>
+            <li>Humidity: {{ humidity }} %</li>
+            <li>Rainfall: {{ rainfall }} mm</li>
+        </ul>
+        <a href="{{ url_for('index') }}">Go back</a>
+    </div>
+</body>
+</html>
